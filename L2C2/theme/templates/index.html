@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load i18n staticfiles%}
+
+{% block meta_title %}{% trans "Classe inversée de M.GEORGET" %}{% endblock %}
+{% block title %}{% trans "Classe inversée de M.GEORGET" %}{% endblock %}
+
+{% block breadcrumb_menu %}
+<li class="active">{% trans "Home" %}</li>
+{% endblock %}
+
+
+{%block content%}
+<div class = "testimonials2">
+<section>
+  Ressources pour les niveaux 3<sup>ème</sup> et 4<sup>ème</sup> du collège Les Lesques à Lesparre.
+<br/>
+<br/>
+  <blockquote style="font-style:normal;font-weight:300">
+
+    <p>
+
+      Ce site a été créé dans le soucis de permettre aux élèves d’avoir le temps qui leur convient pour l’écriture et la compréhension de la leçon chez eux, et de leur permettre ainsi de se concentrer sur la pratique, la réflexion et l’entrainement en classe.
+      <hr/>
+    <span class = "image fit">
+      <img src="{% static 'images/classe-inversee.png'%} " alt=''></img>
+    </span>
+<hr/>
+      <br/>Le fonctionnement se fait en 3 étapes :
+<ul>
+  <li>
+    Introduction du nouveau chapitre en classe
+    </li>
+  <li>
+    Visionnage de la vidéo & Ecriture de la leçon à la maison (Il suffit d’écrire ce qui est présenté dans la vidéo, et de reprendre les illustrations quand nécessaire) + QCM de compréhension de quelques questions
+  </li>
+<li>
+  Exercices d’approfondissement en classe
+  </li>
+<br/>
+En cas de soucis matériel pour pouvoir suivre cette classe inversée, les supports peuvent être fournis sur clef USB, ou au format papier si je suis prévenu en avance.
+Toutes les questions sur ce dispositif sont bien entendu les bienvenues, de la part des élèves comme des parents.
+<br/>
+<br/>
+    </p>
+  </blockquote>
+
+  <div class="author">
+
+      <p class = "credit">
+        <div class = "image">
+          <img src = "{% static 'images/' %}" class ='widthSet' alt=''></img>
+        </div>
+        <strong style:"color:red"> - Larry Georget </strong>
+
+        <span> Professeur de Mathématiques au collège <a href = "http://www.clg-les-lesques-lesparre-medoc.fr/">Les Lesques</a> à Lesparre</span>
+      </p>
+
+  </div>
+
+</section>
+</div>
+{%endblock content%}

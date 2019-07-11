@@ -1,0 +1,34 @@
+{%extends 'wrapper.html'%}
+
+
+{% load i18n mezzanine_tags blog_tags keyword_tags disqus_tags %}
+
+<!-- Posts listing-->
+{% block content %}
+
+{% blog_recent_posts 100000 category=page.title as recent_posts %}
+{% if recent_posts %}
+{% for recent_post in recent_posts %}
+<h3><a href="{{ recent_post.get_absolute_url }}"
+    >{{ recent_post.title }}</a></h3>
+
+    {% block blog_post_list_post_metainfo %}
+    {% editable recent_post.publish_date %}
+    <p class="subtitle">
+        {% trans "Publié le" %}:
+        {% blocktrans with sometime=recent_post.publish_date %}{{ sometime }} {% endblocktrans %}
+    </p>
+    {% endeditable %}
+    {% endblock %}
+
+
+<div class="recent-summary">
+{{ recent_post.description_from_content|safe|truncatewords:50 }}
+<!-- recent_post.content|safe -->
+<a href="{{ blog_post.get_absolute_url }}">{% trans "Voir la suite" %}</a>
+<hr>
+
+</div><!-- /recent-summary -->
+{% endfor %}
+{% endif %}
+{% endblock content %}
